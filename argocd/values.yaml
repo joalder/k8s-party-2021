@@ -5,3 +5,8 @@ server:
       - argocd.meyerzuwestram.net
   extraArgs:
     - --insecure
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
