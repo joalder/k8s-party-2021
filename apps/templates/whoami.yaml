@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: whoami
+  namespace: default 
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/joalder/k8s-party-2021
+    targetRevision: HEAD
+    path: whoami 
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
