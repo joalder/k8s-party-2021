@@ -3,9 +3,6 @@ kind: Application
 metadata:
   name: whoami
   namespace: default 
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/tls-acme: "true"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
