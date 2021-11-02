@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: whoami
   namespace: default 
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
