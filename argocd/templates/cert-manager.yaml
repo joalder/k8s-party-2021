@@ -4,7 +4,7 @@ metadata:
   name: tls-secret
   namespace: default
 spec:
-  secretName: tls-argo-cd
+  secretName: tls-secret
   duration: 438000h0m0s
   commonName: argocd.meyerzuwestram.net
   dnsNames:
