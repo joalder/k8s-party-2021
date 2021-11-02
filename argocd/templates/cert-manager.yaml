@@ -9,6 +9,6 @@ spec:
   commonName: argocd.meyerzuwestram.net
   dnsNames:
     - argocd.meyerzuwestram.net
-    - issuerRef:
-        name: letsencrypt-prod
-        kind: ClusterIssuer
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
