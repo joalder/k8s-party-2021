@@ -4,7 +4,6 @@ metadata:
   name: ingress-whoami
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/tls-acme: "true"
 
 spec:
   rules:
