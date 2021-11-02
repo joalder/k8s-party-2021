@@ -6,6 +6,7 @@ argo-cd:
             - argocd.meyerzuwestram.net
           secretName: tls-argo-cd
       enabled: true
+      pathType: ImplementationSpecific
       hosts:
         - argocd.meyerzuwestram.net
     extraArgs:
