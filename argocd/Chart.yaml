@@ -1,0 +1,11 @@
+# The purpose for this module is simply to overwrite a single config value
+# since helm will automatically apply the values.yaml found here on top of the
+# dependency
+apiVersion: v2
+name: argo-cd
+version: 3.26.5
+type: application
+dependencies:
+  - name: argo-cd
+    version: 3.26.5
+    repository: https://argoproj.github.io/argo-helm
