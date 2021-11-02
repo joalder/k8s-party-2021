@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: whoami
+  namespace: default 
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/joalder/k8s-party-2021
+    targetRevision: HEAD
+    path: whoami 
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-whoami
+
+spec:
+  rules:
+  - host: whoami.meyerzuwestram.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: whoami
+            port: 
+              number: 80
