@@ -1,6 +1,10 @@
 argo-cd:
   server:
     ingress:
+      tls:
+        - hosts:
+            - argocd.meyerzuwestram.net
+          secretName: tls-argo-cd
       enabled: true
       hosts:
         - argocd.meyerzuwestram.net
