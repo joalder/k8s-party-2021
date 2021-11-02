@@ -5,17 +5,17 @@ metadata:
 
 spec:
   rules:
-  - host: whoami.meyerzuwestram.net
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: whoami
-            port: 
-              number: 80
+    - host: whoami.meyerzuwestram.net
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whoami
+                port: 
+                  number: 80
   tls:
-  - hosts:
-    - whoami.meyerzuwestram.net 
-    secretName: whoami-cert
+    - hosts:
+        - whoami.meyerzuwestram.net 
+        secretName: whoami-tls
