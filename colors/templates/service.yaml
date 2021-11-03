@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  name: colors
+  labels:
+    app: colors
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: colors
+  template:
+    metadata:
+      labels:
+        app: colors
+    spec:
+      containers:
+        - name: colors
+          image: particule/simplecolorapi:1.0
+          ports:
+            - name: web
+              containerPort: 80
