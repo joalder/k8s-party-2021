@@ -11,19 +11,19 @@ spec:
     helm:
       parameters:
         - name: drupalPassword
-          value: p4ssw0rd
+          value: "p4ssw0rd"
         - name: drupalUsername
-          value: user
+          value: "user"
         - name: drupalEmail
-          value: user@email.com 
+          value: "user@email.com"
         - name: ingress.enabled
-          value: true
+          value: "true"
         - name: ingress.annotations\.cert-manager\.io/cluster-issuer
-          value: letsencrypt-prod
+          value: "letsencrypt-prod"
         - name: ingress.tls
-          value: true 
+          value: "true"
         - name: ingress.hostname
-          value: drupal.meyerzuwestram.net 
+          value: "drupal.meyerzuwestram.net" 
     chart: drupal
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 10.4.1
