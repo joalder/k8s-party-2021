@@ -20,4 +20,4 @@ spec:
           image: particule/simplecolorapi:1.0
           ports:
             - name: web
-              containerPort: 80
+              containerPort: 5000
