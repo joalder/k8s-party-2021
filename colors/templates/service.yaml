@@ -1,12 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   namespace: default
   name: colors
   labels:
     app: colors
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: colors
@@ -21,3 +21,12 @@ spec:
           ports:
             - name: web
               containerPort: 5000
+  strategy:
+    canary:
+      steps:
+        - setWeight: 20
+        - pause:
+            duration: "30s"
+        - setWeight: 50
+        - pause:
+            duration: "30s"
