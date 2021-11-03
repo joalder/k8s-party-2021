@@ -1,0 +1,4 @@
+apiVersion: v2
+name: woo-commerce
+version: 5.8.0
+type: application

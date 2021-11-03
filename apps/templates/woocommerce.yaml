@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: woo-commerce
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    repoURL: https://github.com/woocommerce/woocommerce
+    targetRevision: HEAD
+    path: woocommerce.yaml
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
