@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: opencart
+  namespace: default
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    helm:
+      parameters:
+        value: "user@email.com"
+          - name: ingress.enabled
+            value: "true"
+          - name: ingress.annotations.cert-manager\.io/cluster-issuer
+            value: "letsencrypt-prod"
+          - name: ingress.tls
+            value: "true"
+          - name: ingress.hostname
+            value: "opencart.meyerzuwestram.net"
+
+    chart: opencart
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 10.0.29
+    path: opencart
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
