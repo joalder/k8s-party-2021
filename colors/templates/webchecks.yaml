@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
-  name: webcheck
+  name: webchecks
 spec:
   metrics:
-    - name: webcheck
+    - name: webchecks
       failureLimit: 1
       interval: "5"
       successCondition: result == "ok"
