@@ -1,9 +1,7 @@
-# The purpose for this module is simply to overwrite a single config value
-# since helm will automatically apply the values.yaml found here on top of the
-# dependency
 apiVersion: v2
 name: colors
-description: whoami
+description: colors
+
 type: application
 # increment these for every update; version is semver, appVersion is freetext
 version: 1.0.0
