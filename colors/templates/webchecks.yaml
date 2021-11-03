@@ -3,6 +3,8 @@ kind: AnalysisTemplate
 metadata:
   name: webcheck
 spec:
+  args:
+    - name: host
   metrics:
     - name: webcheck
       failureLimit: 1
