@@ -8,9 +8,6 @@ metadata:
 spec:
   project: default
   source:
-    helm:
-      valueFiles:
-        - values.yaml
     repoURL: https://github.com/joalder/k8s-party-2021
     targetRevision: HEAD
     path: colors
