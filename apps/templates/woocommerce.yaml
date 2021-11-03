@@ -13,7 +13,7 @@ spec:
         - values.yaml
     repoURL: https://github.com/woocommerce/woocommerce
     targetRevision: HEAD
-    path: woocommerce.yaml
+    path: woocommerce
   destination:
     namespace: default
     server: https://kubernetes.default.svc
