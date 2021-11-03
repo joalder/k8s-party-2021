@@ -18,9 +18,8 @@ spec:
           value: user@email.com 
         - name: ingress.enabled
           value: true
-        - name: ingress.annotations
-          value:
-            cert-manager.io/cluster-issuer: letsencrypt-prod
+        - name: ingress.annotations\.cert-manager\.io/cluster-issuer
+          value: letsencrypt-prod
         - name: ingress.tls
           value: true 
         - name: ingress.hostname
