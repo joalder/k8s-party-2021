@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: drupal
+  namespace: default 
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    helm:
+      parameters:
+        - name: drupalPassword
+          value: p4ssw0rd
+        - name: drupalUsername
+          value: user
+        - name: drupalEmail
+          value: user@email.com 
+        - name: ingress.enabled
+          value: true
+        - name: ingress.annotations
+          value:
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+        - name: ingress.tls
+          value: true 
+        - name: ingress.hostname
+          value: drupal.meyerzuwestram.net 
+    chart: drupal
+    repoURL: https://charts.bitnami.com/bitnami
+    targetRevision: 10.4.1
+    path: drupal
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
