@@ -4,7 +4,7 @@ metadata:
   name: rollout-tls-secret
   namespace: default
 spec:
-  secretName: tls-secret
+  secretName: rollout-tls-secret
   duration: 438000h0m0s
   commonName: argo-rollouts.meyerzuwestram.net
   dnsNames:
