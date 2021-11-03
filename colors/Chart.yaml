@@ -1,11 +1,8 @@
-# The purpose for this module is simply to overwrite a single config value
-# since helm will automatically apply the values.yaml found here on top of the
-# dependency
 apiVersion: v2
 name: colors
-version: 3.26.5
+description: colors
+
 type: application
-dependencies:
-  - name: colors
-    version: 3.26.5
-    repository: https://github.com/particuleio/demo-concourse-flux.git
+# increment these for every update; version is semver, appVersion is freetext
+version: 1.0.0
+appVersion: "1.0.0"
