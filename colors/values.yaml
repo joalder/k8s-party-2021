@@ -1,0 +1,13 @@
+colors:
+  server:
+    ingress:
+      tls:
+        - hosts:
+            - argocd.meyerzuwestram.net
+          secretName: tls-secret
+      enabled: true
+      pathType: ImplementationSpecific
+      hosts:
+        - colors.meyerzuwestram.net
+    extraArgs:
+      - --insecure
