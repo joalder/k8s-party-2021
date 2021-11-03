@@ -28,7 +28,7 @@ spec:
         templates:
           - templateName: webchecks
       args:
-        - name host
+        - name: host
           value: colors
       steps:
         - setWeight: 20
