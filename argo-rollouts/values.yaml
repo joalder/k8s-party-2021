@@ -1,0 +1,13 @@
+argo-cd:
+  server:
+    ingress:
+      tls:
+        - hosts:
+            - argo-rollouts.meyerzuwestram.net
+          secretName: tls-secret
+      enabled: true
+      pathType: ImplementationSpecific
+      hosts:
+        - argo-rollouts.meyerzuwestram.net
+    extraArgs:
+      - --insecure

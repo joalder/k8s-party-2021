@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: tls-secret
+  namespace: default
+spec:
+  secretName: tls-secret
+  duration: 438000h0m0s
+  commonName: argo-rollouts.meyerzuwestram.net
+  dnsNames:
+    - argo-rollouts.meyerzuwestram.net
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
