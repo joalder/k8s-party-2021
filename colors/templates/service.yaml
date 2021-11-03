@@ -24,6 +24,9 @@ spec:
               containerPort: 5000
   strategy:
     canary:
+      analysis:
+        templates:
+          - templateName: webchecks
       steps:
         - setWeight: 20
         - pause:
