@@ -4,7 +4,7 @@ argo-cd:
       tls:
         - hosts:
             - argo-rollouts.meyerzuwestram.net
-          secretName: tls-secret
+          secretName: rollout-tls-secret
       enabled: true
       pathType: ImplementationSpecific
       hosts:
