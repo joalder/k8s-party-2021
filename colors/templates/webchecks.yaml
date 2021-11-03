@@ -11,5 +11,5 @@ spec:
       provider:
         web:
           # paceholders are resolved when an AnalysisRun is created
-          url: colors.meyerzuwestram.net
+          url: https://colors.meyerzuwestram.net
           jsonPath: "{$.status}"
