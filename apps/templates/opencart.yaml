@@ -8,6 +8,18 @@ metadata:
 spec:
   project: default
   source:
+    helm:
+      parameters:
+        value: "user@email.com"
+          - name: ingress.enabled
+            value: "true"
+          - name: ingress.annotations.cert-manager\.io/cluster-issuer
+            value: "letsencrypt-prod"
+          - name: ingress.tls
+            value: "true"
+          - name: ingress.hostname
+            value: "opencart.meyerzuwestram.net"
+
     chart: opencart
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 10.0.29
