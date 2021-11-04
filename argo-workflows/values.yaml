@@ -1,0 +1,13 @@
+argo-workflows:
+  server:
+    ingress:
+      tls:
+        - hosts:
+            - argo-workflows.meyerzuwestram.net
+          secretName: events-tls-secret
+      enabled: true
+      pathType: ImplementationSpecific
+      hosts:
+        - argo-workflows.meyerzuwestram.net
+    extraArgs:
+      - --insecure
