@@ -9,5 +9,3 @@ argo-workflows:
       pathType: ImplementationSpecific
       hosts:
         - argo-workflows.meyerzuwestram.net
-    extraArgs:
-      - --insecure
