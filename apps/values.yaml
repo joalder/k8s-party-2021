@@ -1,0 +1,8 @@
+colors:
+  environments:
+    - host: colors.meyerzuwestram.net
+      namespace: default
+      image: particule/simplecolorapi:1.0
+    - host: colors-feature-1.meyerzuwestram.net
+      namespace: feature-1
+      image: particule/simplecolorapi:2.0

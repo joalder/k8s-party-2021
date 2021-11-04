@@ -1,3 +1,5 @@
+{{- range .Values.environments }}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -8,13 +10,22 @@ metadata:
 spec:
   project: default
   source:
+    helm:
+      parameters:
+        - name: image
+          value: {{ .image }}
+        - name: host
+          value: {{ .host }}
     repoURL: https://github.com/joalder/k8s-party-2021
     targetRevision: HEAD
     path: colors
   destination:
-    namespace: default
+    namespace: {{ .namespace }}
     server: https://kubernetes.default.svc
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
+{{- end}}
