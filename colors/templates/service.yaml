@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 
 metadata:
-  namespace: default
+  namespace: {{ .Values.namespace }}
   name: colors
   labels:
     app: colors
