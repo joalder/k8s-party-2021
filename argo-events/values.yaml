@@ -1,13 +1,13 @@
-argo-rollouts:
+argo-events:
   server:
     ingress:
       tls:
         - hosts:
-            - argo-rollouts.meyerzuwestram.net
-          secretName: rollout-tls-secret
+            - argo-events.meyerzuwestram.net
+          secretName: events-tls-secret
       enabled: true
       pathType: ImplementationSpecific
       hosts:
-        - argo-rollouts.meyerzuwestram.net
+        - argo-events.meyerzuwestram.net
     extraArgs:
       - --insecure

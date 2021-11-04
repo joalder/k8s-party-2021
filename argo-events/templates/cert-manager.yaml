@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: events-tls-secret
+  namespace: default
+spec:
+  secretName: events-tls-secret
+  duration: 438000h0m0s
+  commonName: argo-events.meyerzuwestram.net
+  dnsNames:
+    - argo-events.meyerzuwestram.net
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
