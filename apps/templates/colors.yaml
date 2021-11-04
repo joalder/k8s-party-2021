@@ -1,9 +1,9 @@
-{{- range .Values.environments }}
+{{- range .Values.colors.environments }}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: colors
+  name: {{ .name }}
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
